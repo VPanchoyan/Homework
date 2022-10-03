@@ -5,3 +5,7 @@ for i in l:
     for j in i:
         dic[j] = flat_list.count(j)
 dic = sorted(dic.items(),key = dic.values())
+print("Most common numbers are:",end = ' ')
+for i in range(1,4):
+    print(dic.keys()[-i])
+    
