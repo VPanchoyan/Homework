@@ -8,7 +8,7 @@ public:
 		int a,
 		int h,
 		int w
-	) : m_name{n}, m_breed{b}, m_age{a}, m_height{h}, m_weight{w} {}
+	) : m_name {n}, m_breed {b}, m_age {a}, m_height {h}, m_weight {w} {}
 	Dog(const Dog& d);
 	void SetName(const std::string& s);
 	void SetBreed(const std::string& s);
