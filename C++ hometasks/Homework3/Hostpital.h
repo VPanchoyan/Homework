@@ -1,24 +1,24 @@
 #include <string>
 
-enum Hospital_types{
-	military,
-	civil,
-	children,
-	maternity
+enum class Hospital_types : char {
+	Military,
+	Civil,
+	Children,
+	Maternity
 };
 
-class Hospital{
+class Hospital {
 public:
-	Hospital(){}
-	Hospital( std::string n,
-		std::string addr,
+	Hospital() = default;
+	Hospital(const std::string& n,
+		const std::string& addr,
 		Hospital_types t,
 		int sc,
 		int fb,
-	) _name(n), _address(addr), _type(t), _staff_count(sc), _patients(0), _free_beds(b){}
+	) m_name{n}, m_address{addr}, m_type{t}, m_staff_count{sc}, m_patients{0}, m_free_beds{b} {}
 	Hospital(const Hospital&);
-	void SetName(std::string name);
-	void SetAddress(std::string addr);
+	void SetName(const std::string& name);
+	void SetAddress(const std::string& addr);
 	void SetType(Hospital_types t);
 	void SetStaffCount(int sc);
 	void SetPatientsCount(int pc);
@@ -28,12 +28,12 @@ public:
 	int GetStaffCount() const;
 	int GetPatientsCount() const;
 	int GetFreeBeds() const;
-	~Hospital(){}
+	~Hospital() = default;
 private:
-	std::string _name;
-	std::string _address;
-	Hospital_types _type;
-	int _staff_count;
-	int _patients;
-	int _free_beds;
+	std::string m_name;
+	std::string m_address;
+	Hospital_types m_type;
+	int m_staff_count;
+	int m_patients;
+	int m_free_beds;
 };
