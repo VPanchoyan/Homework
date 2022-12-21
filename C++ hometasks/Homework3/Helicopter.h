@@ -1,28 +1,28 @@
 #include <string>
 
-enum Helicopter_types{
-	combat,
-	passenger,
-	cargo
+enum class Helicopter_types : char{
+	Combat,
+	Passenger,
+	Cargo
 };
 
 
-class Helicopter{
+class Helicopter {
 public:
-	Helicopter(){};
+	Helicopter() = default;
 	Helicopter(Helicopter_types t,
-		std::string n,
-		std::string m,
-		std::string c,
+		const std::string& n,
+		const std::string& m,
+		const std::string& c,
 		int w,
 		int rc,
 		int ms
-	) : _type(t),_name(n),_model(m),_country(c),_weight(w),_rotor_count(rc),_max_speed(ms){}
+	) : m_type{t},m_name{n},m_model{m},m_country{c},m_weight{w},m_rotor_count{rc},m_max_speed{ms} {}
 	Helicopter(const Helicopter&);
 	void SetType(Helicopter_types t);
-	void SetName(std::string n);
-	void SetModel(std::string m);
-	void SetCountry(std::string c);
+	void SetName(const std::string& n);
+	void SetModel(const std::string& m);
+	void SetCountry(const std::string& c);
 	void SetWeight(int w);
 	void SetRotorCount(int rc);
 	void SetMaxSpeed(int ms);
@@ -33,13 +33,13 @@ public:
 	int GetWeight() const;
 	int GetRotorCount() const;
 	int GetMaxSpeed() const;
-	~Helicopter(){};
+	~Helicopter() = default;
 private:
-	Helicopter_types _type;
-	std::string _name;
-	std::string _model;
-	std::string _country;
-	int _weight;
-	int _rotor_count;
-	int _max_speed;
+	Helicopter_types m_type;
+	std::string m_name;
+	std::string m_model;
+	std::string m_country;
+	int m_weight;
+	int m_rotor_count;
+	int m_max_speed;
 };
