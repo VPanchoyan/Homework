@@ -15,7 +15,7 @@ public:
 		Hospital_types t,
 		int sc,
 		int fb,
-	) m_name{n}, m_address{addr}, m_type{t}, m_staff_count{sc}, m_patients{0}, m_free_beds{b} {}
+	) m_name {n}, m_address {addr}, m_type {t}, m_staff_count {sc}, m_patients {0}, m_free_beds {b} {}
 	Hospital(const Hospital&);
 	void SetName(const std::string& name);
 	void SetAddress(const std::string& addr);
