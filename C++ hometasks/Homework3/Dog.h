@@ -1,17 +1,17 @@
 #include <string>
 
-class Dog{
+class Dog {
 public:
-	Dog(){}
-	Dog(std::string n,
-		std::string b,
+	Dog() = default;
+	Dog(const std::string& n,
+		const std::string& b,
 		int a,
 		int h,
 		int w
-	) : _name(n), _breed(b), _age(a),_height(h),_weight(w) {}
+	) : m_name{n}, m_breed{b}, m_age{a}, m_height{h}, m_weight{w} {}
 	Dog(const Dog& d);
-	void SetName(std::string s);
-	void SetBreed(std::string s);
+	void SetName(const std::string& s);
+	void SetBreed(const std::string& s);
 	void SetAge(int a);
 	void SetHeight(int h);
 	void SetWeight(int w);
@@ -20,11 +20,11 @@ public:
 	int GetAge() const;
 	int GetHeight() const;
 	int GetWeight() const;
-	~Dog(){}
+	~Dog() = default;
 private:
-	std::string _name;
-	std::string _breed;
-	int _age;
-	int _height;
-	int _weight;
+	std::string m_name;
+	std::string m_breed;
+	int m_age;
+	int m_height;
+	int m_weight;
 };
