@@ -1,6 +1,6 @@
 #include <string>
 
-enum class Helicopter_types : char{
+enum class Helicopter_types : char {
 	Combat,
 	Passenger,
 	Cargo
@@ -17,7 +17,7 @@ public:
 		int w,
 		int rc,
 		int ms
-	) : m_type{t},m_name{n},m_model{m},m_country{c},m_weight{w},m_rotor_count{rc},m_max_speed{ms} {}
+	) : m_type {t}, m_name {n}, m_model {m}, m_country {c}, m_weight {w}, m_rotor_count {rc}, m_max_speed {ms} {}
 	Helicopter(const Helicopter&);
 	void SetType(Helicopter_types t);
 	void SetName(const std::string& n);
